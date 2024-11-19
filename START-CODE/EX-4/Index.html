@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=workspace_premium" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward" />
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawLineChart);
+
+    function drawLineChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Month', 'Time', 'Daily'],
+        ['1st Week',  1000,      400],
+        ['2nd Week',  1170,      460],
+        ['3rd Week',  660,       1120],
+        ['4th Week',  1030,      540]
+      ]);
+
+      var options = {
+        title: 'Your Performance',
+        curveType: 'function',
+        legend: { position: 'bottom' }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+      chart.draw(data, options);
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <aside class="navigation">
+      <i class="material-icons">menu</i>
+      <div class="nav-item">
+        <div class="nav-link"><i class="material-symbols-outlined"></i>Dashboard</div>
+        <div class="nav-link">Classes</div>
+        <div class="nav-link">Resources</div>
+        <div class="nav-link">Learning plan</div>
+        <div class="nav-link">Settings</div>
+      </div>
+      <button class="upgrade">Upgrade</button>
+    </aside>
+    <main class="content">
+      <section class="welcome-sec">
+        <h2>Welcome back, Bora!</h2>
+        <p>You've learned 40% of your goal this week! Keep it up and improve your results!</p>
+      </section>
+      <section class="contents">
+        <div class="content1 result">
+        <div class="txt">Latest Results 
+          <div class="progress">
+            <h4>Unit1 - <span>Tuesday</span></h4>
+            <div class="result-bar-part">
+                <div class="result-bar">
+                    <div class="progress-result"  id="result-1"></div>
+                </div>
+                <p class="progress-percent" id="percent-1">62%</p>
+            </div>
+        </div>
+        <div class="progress">
+            <h4>Unit2 - <span>Monday</span></h4>
+            <div class="result-bar-part">
+                <div class="result-bar">
+                    <div class="progress-result"  id="result-2"></div>
+                </div>
+                <p class="progress-percent" id="percent-2">29%</p>
+            </div>
+        </div>
+        <div class="progress">
+          <h4>Unit3 - <span>Friday</span></h4>
+          <div class="result-bar-part">
+              <div class="result-bar">
+                  <div class="progress-result"  id="result-3"></div>
+              </div>
+              <p class="progress-percent" id="percent-3">82%</p>
+          </div>
+      </div>
+      <div class="progress">
+          <h4>Unit4 - <span>Saturday</span></h4>
+          <div class="result-bar-part">
+              <div class="result-bar">
+                  <div class="progress-result"  id="result-4"></div>
+              </div>
+              <p class="progress-percent" id="percent-4">10%</p>
+          </div>
+      </div>
+      <div class="progress">
+          <h4>Unit5 - <span>Wednesday</span></h4>
+          <div class="result-bar-part">
+              <div class="result-bar">
+                  <div class="progress-result" id="result-5"></div>
+              </div>
+              <p class="progress-percent" id="percent-5">40%</p>
+          </div>
+      </div>
+        </div>
+        </div>  
+        <div class="content2 time">
+         <div class="txt">Time spent on learning
+        <div id="curve_chart" class="chart"></div></div> 
+        </div>
+      </section>
+      <div class="course">
+        Your Courses 
+        <div class="see-more">See more <span class="material-symbols-outlined">arrow_forward</span></div>
+      </div>
+      <div class="sub"><div class="subject1"><div class="lesson" id="g1">B2</div>Grammar</div>
+      <div class="subject2"><div class="lesson" id="m1">B2</div>Math</div>
+      <div class="subject3"><div class="lesson" id="c1">C1</div>English</div></div>
+    </main>
+    <aside class="rightinfor">
+      <div class="profile-section">
+        <img src="image.png" alt="Profile Picture" class="profile-img">
+        <h3>Bora Haru</h3>
+        <p>Student</p>
+        <button class="edit-profile">Edit Profile</button>
+      </div>
+      <div class="reminder-section">
+        <h4>Upcoming Reminders</h4>
+        <ul class="reminder-list">
+          <li>Complete Unit 1 by Wednesday</li>
+          <li>Revise Math concepts for quiz</li>
+          <li>Study English grammar for the test</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</body>
+</html> 
